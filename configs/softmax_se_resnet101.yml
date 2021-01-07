@@ -1,0 +1,83 @@
+MODEL:
+  #PRETRAIN_PATH2: 'logs/softmax/resnet50_model_120.pth'
+  #PRETRAIN_PATH2: 'logs/softmax/resnet50_optimizer_120.pth'
+  #PRETRAIN_PATH: '/root/.torch/models/resnet50-19c8e357.pth'
+  #PRETRAIN_PATH: 'model_file/market_resnet50_model_120_rank1_945.pth'
+  #METRIC_LOSS_TYPE: 'softmax'
+#PRETRAIN_PATH2: '/data2/zhihui/my/reid_strong_baseline/logs/softmax_se_resnet101/se_resnet101_model_160.pth'
+  #PRETRAIN_PATH2: '/data2/zhihui/my/reid_strong_baseline/logs/two_branch_se_resnet50_finetune_sgd_lr2/se_resnet50_model_200.pth'
+  PRETRAIN_PATH2: '/data2/zhihui/my/reid_strong_baseline/logs/two_branch_se_resnet101_finetune_Adam_default_myLossV2/se_resnet101_model_135_best.pth'
+  PRETRAIN_PATH: '/root/.torch/models/se_resnet101-7e38fcc6.pth'
+# best
+# /data2/zhihui/my/reid_strong_baseline/logs/two_branch_se_resnet101_finetune_Adam_default_myLossV2
+  NAME: 'se_resnet101'
+  ONLY_BASE: 'no'
+  WITHOUT_FC: 'no'
+  ONCE_LOAD: 'yes'
+  METRIC_LOSS_TYPE: 'softmax' 
+#  METRIC_LOSS_TYPE: 'triplet'
+
+INPUT:
+  SIZE_TRAIN: [384, 128]
+  SIZE_TEST: [384, 128]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  PADDING: 10
+  SIZE_DOWN: [128, 64]
+  SIZE_UP: [420, 150]
+  DEGREE: 15
+
+DATASETS:
+  NAMES: ('market1501')
+  ID_BALANCE: 'off'
+
+DATALOADER:
+  SAMPLER: 'softmax' #
+#SAMPLER: 'triplet' #'softmax'
+  NUM_WORKERS: 8
+  NUM_INSTANCE: 4
+
+SOLVER:
+  MY_OPTIMIZER: 'no'
+  MY_OPTIMIZER_NAME: 'SGD'
+  LR: 0.1
+  MY_SCHEDULER: 'no'
+  MY_SCHEDULER_NAME: 'SL'
+  MY_SCHEDULER_STEP: [30, 50, 80, 110]
+  MY_WARMUP: 'no'
+  MY_WARMUP_EPOCH: 3
+  MY_WARMUP_FACTOR: 1.5
+  MIXUP: False
+  RICAP: False
+
+  OPTIMIZER_NAME: 'Adam'
+  MAX_EPOCHS: 180
+  BASE_LR: 0.000035
+  BIAS_LR_FACTOR: 1
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+  IMS_PER_BATCH: 64
+
+  STEPS: [45,100]
+  GAMMA: 0.1
+
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 10
+  WARMUP_METHOD: 'linear'
+
+  CHECKPOINT_PERIOD: 2000
+  LOG_PERIOD: 10
+  EVAL_PERIOD: 3 
+
+TEST:
+  NECK_FEAT: 'after'
+  IMS_PER_BATCH: 64
+  RE_RANKING: 'no'
+  FEAT_NORM: 'yes'
+  TYPE: 'euclidean'
+#TYPE: 'cosine'
+
+#OUTPUT_DIR: '/data2/zhihui/my/reid_strong_baseline/logs/two_branch_se_resnet101_finetune_mysgdV2_myLossV2_mixupss/'
+OUTPUT_DIR: '/data2/zhihui/my/reid_strong_baseline/logs/two_branch_se_resnet101_finetune_Adam_myLossV2_argument_only_load_best/'
+#OUTPUT_DIR: '/datai2/zhihui/my/reid_strong_baseline/logs/null/'
+

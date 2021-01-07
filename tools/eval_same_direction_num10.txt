@@ -1,0 +1,138 @@
+
+
+
+ ***** front_list:
+       --> 1. best model
+mAP: 93.58%    Rank-1:95.93%  Rank-5:97.88%  Rank-10:98.53%  Rank-20:98.53%
+       --> 2. baseline model
+mAP: 92.20%    Rank-1:94.79%  Rank-5:98.05%  Rank-10:98.53%  Rank-20:98.86%
+       --> 1. best model
+mAP: 93.25%    Rank-1:95.28%  Rank-5:97.72%  Rank-10:98.53%  Rank-20:98.86%
+       --> 2. baseline model
+mAP: 91.05%    Rank-1:93.97%  Rank-5:97.39%  Rank-10:98.86%  Rank-20:99.02%
+       --> 1. best model
+mAP: 93.73%    Rank-1:95.93%  Rank-5:98.21%  Rank-10:98.70%  Rank-20:99.19%
+       --> 2. baseline model
+mAP: 91.98%    Rank-1:94.79%  Rank-5:98.05%  Rank-10:99.19%  Rank-20:99.35%
+       --> 1. best model
+mAP: 93.60%    Rank-1:95.60%  Rank-5:97.88%  Rank-10:98.53%  Rank-20:99.02%
+       --> 2. baseline model
+mAP: 91.76%    Rank-1:95.28%  Rank-5:97.56%  Rank-10:98.37%  Rank-20:99.02%
+       --> 1. best model
+mAP: 93.54%    Rank-1:95.77%  Rank-5:98.21%  Rank-10:98.70%  Rank-20:98.86%
+       --> 2. baseline model
+mAP: 91.57%    Rank-1:94.63%  Rank-5:97.88%  Rank-10:98.37%  Rank-20:99.02%
+       --> 1. best model
+mAP: 93.25%    Rank-1:95.28%  Rank-5:98.21%  Rank-10:98.70%  Rank-20:99.02%
+       --> 2. baseline model
+mAP: 90.95%    Rank-1:94.14%  Rank-5:97.23%  Rank-10:98.53%  Rank-20:98.86%
+       --> 1. best model
+mAP: 93.92%    Rank-1:96.42%  Rank-5:98.70%  Rank-10:99.19%  Rank-20:99.51%
+       --> 2. baseline model
+mAP: 91.54%    Rank-1:95.11%  Rank-5:98.05%  Rank-10:99.02%  Rank-20:99.35%
+       --> 1. best model
+mAP: 93.48%    Rank-1:95.44%  Rank-5:98.37%  Rank-10:98.70%  Rank-20:98.86%
+       --> 2. baseline model
+mAP: 91.39%    Rank-1:93.65%  Rank-5:97.88%  Rank-10:98.70%  Rank-20:99.19%
+       --> 1. best model
+mAP: 92.87%    Rank-1:94.63%  Rank-5:97.72%  Rank-10:98.37%  Rank-20:99.02%
+       --> 2. baseline model
+mAP: 91.51%    Rank-1:94.79%  Rank-5:97.39%  Rank-10:98.37%  Rank-20:99.19%
+       --> 1. best model
+mAP: 93.85%    Rank-1:96.09%  Rank-5:98.21%  Rank-10:98.70%  Rank-20:98.86%
+       --> 2. baseline model
+mAP: 91.94%    Rank-1:94.79%  Rank-5:98.53%  Rank-10:98.86%  Rank-20:99.02%
+average best: mAP: 93.51%    Rank-1:95.64%  Rank-5:98.11%  Rank-10:98.66%  Rank-20:98.97%
+average best: mAP: 91.59%    Rank-1:94.59%  Rank-5:97.80%  Rank-10:98.68%  Rank-20:99.09%
+
+
+
+ ***** back_list:
+       --> 1. best model
+mAP: 93.39%    Rank-1:95.26%  Rank-5:97.88%  Rank-10:98.53%  Rank-20:99.18%
+       --> 2. baseline model
+mAP: 92.21%    Rank-1:93.79%  Rank-5:97.88%  Rank-10:98.37%  Rank-20:99.02%
+       --> 1. best model
+mAP: 93.68%    Rank-1:95.92%  Rank-5:98.04%  Rank-10:99.02%  Rank-20:99.51%
+       --> 2. baseline model
+mAP: 92.92%    Rank-1:94.28%  Rank-5:97.88%  Rank-10:98.86%  Rank-20:99.18%
+       --> 1. best model
+mAP: 93.72%    Rank-1:95.75%  Rank-5:97.88%  Rank-10:98.69%  Rank-20:99.02%
+       --> 2. baseline model
+mAP: 92.90%    Rank-1:95.42%  Rank-5:97.22%  Rank-10:98.69%  Rank-20:99.18%
+       --> 1. best model
+mAP: 93.34%    Rank-1:95.10%  Rank-5:97.71%  Rank-10:98.37%  Rank-20:99.02%
+       --> 2. baseline model
+mAP: 92.33%    Rank-1:93.95%  Rank-5:97.55%  Rank-10:98.04%  Rank-20:99.02%
+       --> 1. best model
+mAP: 93.99%    Rank-1:96.24%  Rank-5:98.20%  Rank-10:98.69%  Rank-20:99.18%
+       --> 2. baseline model
+mAP: 93.57%    Rank-1:96.41%  Rank-5:98.20%  Rank-10:98.86%  Rank-20:99.35%
+       --> 1. best model
+mAP: 93.89%    Rank-1:96.41%  Rank-5:98.37%  Rank-10:98.86%  Rank-20:99.02%
+       --> 2. baseline model
+mAP: 92.66%    Rank-1:94.77%  Rank-5:98.04%  Rank-10:98.86%  Rank-20:99.35%
+       --> 1. best model
+mAP: 94.51%    Rank-1:96.24%  Rank-5:98.20%  Rank-10:98.53%  Rank-20:98.69%
+       --> 2. baseline model
+mAP: 92.76%    Rank-1:94.77%  Rank-5:97.39%  Rank-10:98.53%  Rank-20:99.18%
+       --> 1. best model
+mAP: 94.19%    Rank-1:96.90%  Rank-5:98.53%  Rank-10:98.86%  Rank-20:99.18%
+       --> 2. baseline model
+mAP: 93.06%    Rank-1:95.92%  Rank-5:98.20%  Rank-10:99.02%  Rank-20:99.35%
+       --> 1. best model
+mAP: 93.40%    Rank-1:95.75%  Rank-5:98.37%  Rank-10:98.53%  Rank-20:99.18%
+       --> 2. baseline model
+mAP: 92.01%    Rank-1:94.44%  Rank-5:97.88%  Rank-10:98.69%  Rank-20:99.51%
+       --> 1. best model
+mAP: 93.67%    Rank-1:95.75%  Rank-5:97.55%  Rank-10:98.20%  Rank-20:98.69%
+       --> 2. baseline model
+mAP: 92.20%    Rank-1:94.77%  Rank-5:97.39%  Rank-10:98.04%  Rank-20:99.02%
+average best: mAP: 93.78%    Rank-1:95.93%  Rank-5:98.07%  Rank-10:98.63%  Rank-20:99.07%
+average best: mAP: 92.66%    Rank-1:94.85%  Rank-5:97.76%  Rank-10:98.59%  Rank-20:99.22%
+
+
+
+ ***** side_list:
+       --> 1. best model
+mAP: 93.90%    Rank-1:94.77%  Rank-5:98.04%  Rank-10:98.69%  Rank-20:99.35%
+       --> 2. baseline model
+mAP: 92.88%    Rank-1:95.26%  Rank-5:97.06%  Rank-10:98.37%  Rank-20:99.35%
+       --> 1. best model
+mAP: 93.60%    Rank-1:95.42%  Rank-5:98.69%  Rank-10:99.18%  Rank-20:99.51%
+       --> 2. baseline model
+mAP: 93.08%    Rank-1:96.41%  Rank-5:98.37%  Rank-10:98.86%  Rank-20:99.67%
+       --> 1. best model
+mAP: 93.74%    Rank-1:96.24%  Rank-5:97.55%  Rank-10:98.37%  Rank-20:99.02%
+       --> 2. baseline model
+mAP: 92.37%    Rank-1:95.10%  Rank-5:97.71%  Rank-10:98.53%  Rank-20:99.02%
+       --> 1. best model
+mAP: 94.32%    Rank-1:96.41%  Rank-5:98.53%  Rank-10:98.86%  Rank-20:99.18%
+       --> 2. baseline model
+mAP: 92.86%    Rank-1:95.42%  Rank-5:98.04%  Rank-10:98.86%  Rank-20:99.35%
+       --> 1. best model
+mAP: 93.88%    Rank-1:95.59%  Rank-5:98.53%  Rank-10:99.02%  Rank-20:99.35%
+       --> 2. baseline model
+mAP: 92.57%    Rank-1:94.93%  Rank-5:97.88%  Rank-10:99.18%  Rank-20:99.51%
+       --> 1. best model
+mAP: 93.59%    Rank-1:95.92%  Rank-5:98.37%  Rank-10:98.86%  Rank-20:99.02%
+       --> 2. baseline model
+mAP: 92.41%    Rank-1:95.10%  Rank-5:98.20%  Rank-10:98.86%  Rank-20:99.51%
+       --> 1. best model
+mAP: 93.03%    Rank-1:94.44%  Rank-5:97.88%  Rank-10:98.53%  Rank-20:99.02%
+       --> 2. baseline model
+mAP: 92.21%    Rank-1:94.28%  Rank-5:97.55%  Rank-10:98.69%  Rank-20:99.18%
+       --> 1. best model
+mAP: 93.41%    Rank-1:96.41%  Rank-5:98.53%  Rank-10:99.18%  Rank-20:99.51%
+       --> 2. baseline model
+mAP: 92.72%    Rank-1:95.26%  Rank-5:98.69%  Rank-10:99.35%  Rank-20:99.51%
+       --> 1. best model
+mAP: 93.52%    Rank-1:96.57%  Rank-5:98.37%  Rank-10:98.86%  Rank-20:98.86%
+       --> 2. baseline model
+mAP: 92.05%    Rank-1:94.61%  Rank-5:97.88%  Rank-10:99.02%  Rank-20:99.35%
+       --> 1. best model
+mAP: 93.91%    Rank-1:95.42%  Rank-5:98.37%  Rank-10:98.69%  Rank-20:99.35%
+       --> 2. baseline model
+mAP: 92.40%    Rank-1:94.28%  Rank-5:97.39%  Rank-10:98.69%  Rank-20:99.35%
+average best: mAP: 93.69%    Rank-1:95.72%  Rank-5:98.28%  Rank-10:98.82%  Rank-20:99.22%
+average best: mAP: 92.55%    Rank-1:95.07%  Rank-5:97.88%  Rank-10:98.84%  Rank-20:99.38%

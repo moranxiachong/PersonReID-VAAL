@@ -1,0 +1,97 @@
+MODEL:
+  PRETRAIN_CHOICE: 'imagenet'
+  #PRETRAIN_PATH2: '/raid/home/zhihui/reid_strong_baseline/logs/two_branch_se_resnext101_Adam_ep200_LR3_finetune_best_once_load/net_135.pth'
+  #PRETRAIN_PATH2: '/raid/home/zhihui/reid_strong_baseline/logs/resnet101_new_softmax_triplet_Adam_H384_W128/net_120.pth'
+  #PRETRAIN_PATH2: '/raid/home/zhihui/reid_strong_baseline/logs/se_resnext101_fix_new_softmax_SGD/net_190.pth'
+  #PRETRAIN_PATH2: '/raid/home/zhihui/reid_strong_baseline/logs/se_resnext101_new_softmax_triplet_Adam_H386_W128_lr_init/net_185.pth'
+  #PRETRAIN_PATH: '/root/.torch/models/se_resnext101_32x4d-3b2fe3d8.pth'
+  PRETRAIN_PATH: '/raid/home/zhihui/models/resnet50-19c8e357.pth'
+  #METRIC_LOSS_TYPE: 'lsr'
+  METRIC_LOSS_TYPE: 'triplet'
+  IF_LABELSMOOTH: 'no'
+  IF_WITH_CENTER: 'no'
+  NAME: 'resnet50'
+
+  ONLY_BASE: 'no'
+  WITHOUT_FC: 'yes'
+  ONCE_LOAD: 'no'
+  #METRIC_LOSS_TYPE: 'softmax' 
+
+  FREEZE_BASE: no
+  FREEZE_BASE_EPOCH: 50
+
+INPUT:
+  SIZE_TRAIN: [384, 128]
+  SIZE_TEST: [384, 128]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  PADDING: 10
+
+DATASETS:
+  NAMES: ('dukemtmc')
+  ID_BALANCE: 'off'
+  PATH: '/raid/home/zhihui/reid_strong_baseline/data/pkl/duke_image_map_direction_py2.pkl'
+
+DATALOADER:
+  SAMPLER: 'triplet'
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+  TRANSFORM: 'init'
+  PART: -1
+  #PATH: '/raid/home/zhihui/reid_strong_baseline/data/pkl/duke_image_map_direction_py2.pkl'
+
+SOLVER:
+  MY_OPTIMIZER: 'no'
+  MY_OPTIMIZER_NAME: 'SGD'
+  LR: 0.1
+  MY_SCHEDULER: 'no'
+  MY_SCHEDULER_NAME: 'MSL'
+  MY_SCHEDULER_STEP: [30,80,120,160]
+  MY_WARMUP: 'no'
+  MY_WARMUP_EPOCH: 3
+  MY_WARMUP_FACTOR: 1.5
+  MIXUP: False
+  RICAP: False
+
+  OPTIMIZER_NAME: 'Adam'
+  MAX_EPOCHS: 261
+  BASE_LR: 0.00035
+
+  CLUSTER_MARGIN: 0.3
+
+  CENTER_LR: 0.5
+  CENTER_LOSS_WEIGHT: 0.0005
+
+  RANGE_K: 2
+  RANGE_MARGIN: 1.2
+  RANGE_ALPHA: 0
+  RANGE_BETA: 1
+  RANGE_LOSS_WEIGHT: 1
+  MARGIN: 1.2
+
+  BIAS_LR_FACTOR: 1
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+  IMS_PER_BATCH: 96
+
+  STEPS: [50, 100, 180]
+  GAMMA: 0.1
+
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 5
+  WARMUP_METHOD: 'linear'
+
+  CHECKPOINT_PERIOD: 500
+  LOG_PERIOD: 10
+  EVAL_PERIOD: 10
+
+TEST:
+  IMS_PER_BATCH: 128
+  RE_RANKING: 'no'
+  WEIGHT: "path"
+  NECK_FEAT: 'after'
+  FEAT_NORM: 'yes'
+
+OUTPUT_DIR: "/raid/home/zhihui/reid_strong_baseline/logs/resnet50_new_lsr_softmax_triplet_Adam/"
+
+

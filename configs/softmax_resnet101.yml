@@ -1,0 +1,70 @@
+MODEL:
+  #PRETRAIN_PATH2: 'logs/softmax/resnet50_model_120.pth'
+  #PRETRAIN_PATH2: 'logs/softmax/resnet50_optimizer_120.pth'
+  #PRETRAIN_PATH: '/root/.torch/models/resnet50-19c8e357.pth'
+  #PRETRAIN_PATH: 'model_file/market_resnet50_model_120_rank1_945.pth'
+  #METRIC_LOSS_TYPE: 'softmax'
+  PRETRAIN_PATH2: '/raid/home/zhihui/reid_strong_baseline/logs/softmax_resnet101/resnet101_model_160.pth'
+  #PRETRAIN_PATH2: '/data2/zhihui/my/reid_strong_baseline/logs/two_branch_se_resnet50_finetune_sgd_lr2/se_resnet50_model_200.pth'
+  PRETRAIN_PATH: '/root/.torch/models/resnet101-5d3b4d8f.pth'
+  NAME: 'resnet101'
+  ONLY_BASE: 'yes'
+  WITHOUT_FC: 'no'
+  ONCE_LOAD: 'no'
+
+INPUT:
+  SIZE_TRAIN: [384, 128]
+  SIZE_TEST: [384, 128]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  PADDING: 10
+
+DATASETS:
+  NAMES: ('market1501')
+  ID_BALANCE: 'off'
+
+DATALOADER:
+  SAMPLER: 'softmax'
+  NUM_WORKERS: 8
+
+SOLVER:
+  MY_OPTIMIZER: 'yes'
+  MY_OPTIMIZER_NAME: 'SGD'
+  LR: 0.1
+  MY_SCHEDULER: 'yes'
+  MY_SCHEDULER_NAME: 'SL'
+  MY_SCHEDULER_STEP: [30, 50, 80, 110]
+  MY_WARMUP: 'no'
+  MY_WARMUP_EPOCH: 3
+  MY_WARMUP_FACTOR: 1.5
+
+  OPTIMIZER_NAME: 'SGD'
+  MAX_EPOCHS: 180
+  BASE_LR: 0.001
+  BIAS_LR_FACTOR: 1
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+  IMS_PER_BATCH: 32
+
+  STEPS: [40,80]
+  GAMMA: 0.1
+
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 8
+  WARMUP_METHOD: 'linear'
+
+  CHECKPOINT_PERIOD: 5
+  LOG_PERIOD: 10
+  EVAL_PERIOD: 5
+
+TEST:
+  NECK_FEAT: 'after'
+  IMS_PER_BATCH: 64
+  RE_RANKING: 'no'
+  FEAT_NORM: 'yes'
+  TYPE: 'euclidean'
+#TYPE: 'cosine'
+
+OUTPUT_DIR: '/raid/home/zhihui/reid_strong_baseline/logs/two_branch_resnet101_finetune_mysgdV2_SL_myLossV2_bz32/'
+#OUTPUT_DIR: '/datai2/zhihui/my/reid_strong_baseline/logs/null/'
+

@@ -1,0 +1,84 @@
+MODEL:
+  #PRETRAIN_PATH2: '/data2/zhihui/my/reid_strong_baseline/logs/softmax_se_resnext101/se_resnext101_model_160.pth'
+  #PRETRAIN_PATH2: '/data2/zhihui/my/reid_strong_baseline/logs/softmax_se_resnext101_lsr_triplet/se_resnext101_model_160.pth'
+  PRETRAIN_PATH2: '/raid/home/zhihui/reid_strong_baseline/logs/two_branch_se_resnext101_Adma_ep200_LR3_finetune_best_once_load/net_135.pth'
+  #PRETRAIN_PATH2: '/raid/home/zhihui/reid_strong_baseline/logs/se_resnext101_Adam_three_part_2_2048_softmax_triplet_lsr_true/net_180.pth'
+  PRETRAIN_PATH: '/root/.torch/models/se_resnext101_32x4d-3b2fe3d8.pth'
+  NAME: 'se_resnext101'
+  ONLY_BASE: 'no'
+  WITHOUT_FC: 'no'
+  ONCE_LOAD: 'no'
+  #METRIC_LOSS_TYPE: 'softmax'
+  METRIC_LOSS_TYPE: 'triplet'
+
+  FREEZE_BASE: no
+  FREEZE_BASE_EPOCH: 50
+  IF_LABELSMOOTH: 'on'
+
+INPUT:
+  SIZE_TRAIN: [128, 128]
+  SIZE_TEST: [128, 128]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  PADDING: 10
+  SIZE_DOWN: [128, 64]
+  SIZE_UP: [420, 150]
+  DEGREE: 5
+
+DATASETS:
+  NAMES: ('market1501')
+  ID_BALANCE: 'off'
+
+DATALOADER:
+  #SAMPLER: 'softmax' #
+  SAMPLER: 'triplet' #'softmax'
+  NUM_WORKERS: 8
+  NUM_INSTANCE: 4
+  TRANSFORM: 'init'
+  PART: 0
+
+SOLVER:
+  MY_OPTIMIZER: 'no'
+  MY_OPTIMIZER_NAME: 'SGD'
+  LR: 0.01
+  MY_SCHEDULER: 'no'
+  MY_SCHEDULER_NAME: 'MSL'
+  MY_SCHEDULER_STEP: [30,80,120,160]
+  MY_WARMUP: 'no'
+  MY_WARMUP_EPOCH: 3
+  MY_WARMUP_FACTOR: 1.5
+  MIXUP: False
+  RICAP: False
+
+  OPTIMIZER_NAME: 'Adam'
+  MAX_EPOCHS: 201
+  BASE_LR: 0.00035
+  BIAS_LR_FACTOR: 1
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+  IMS_PER_BATCH: 64
+
+  STEPS: [35,80,130,160]
+  GAMMA: 0.1
+
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 10
+  WARMUP_METHOD: 'linear'
+
+  CHECKPOINT_PERIOD: 2000
+  LOG_PERIOD: 5
+  EVAL_PERIOD: 5
+
+TEST:
+  NECK_FEAT: 'after'
+  IMS_PER_BATCH: 64
+  RE_RANKING: 'no'
+  FEAT_NORM: 'yes'
+  TYPE: 'euclidean'
+#TYPE: 'cosine'
+
+#OUTPUT_DIR: '/data2/zhihui/my/reid_strong_baseline/logs/two_branch_se_resnet101_finetune_mysgdV2_myLossV2_mixupss/'
+#OUTPUT_DIR: '/data2/zhihui/my/reid_strong_baseline/logs/two_branch_se_resnext101_Adam_ep200_LR7_finetune_lastest_init_once_load_test/'
+OUTPUT_DIR: '/raid/home/zhihui/reid_strong_baseline/logs/se_resnext101_Adam_part_0_2048/'
+#OUTPUT_DIR: '/datai2/zhihui/my/reid_strong_baseline/logs/null/'
+
